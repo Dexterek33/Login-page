@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel rejestracji</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-controls">
+        <select id="langSwitch" class="lang-switch">
+            <option value="pl">Polski</option>
+            <option value="en">English</option>
+            <option value="pt">Português (Portugal)</option>
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="cs">Čeština</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+        </select>
+        <button id="darkModeToggle" class="dark-mode-toggle">
+            <span class="mode-icon moon">🌙</span>
+            <span class="mode-text" 
+                  data-text-dark="Tryb Ciemny" 
+                  data-text-light="Tryb Jasny"
+                  data-pl-dark="Tryb Ciemny"
+                  data-pl-light="Tryb Jasny"
+                  data-en-dark="Dark Mode"
+                  data-en-light="Light Mode"
+                  data-pt-dark="Modo Escuro"
+                  data-pt-light="Modo Claro"
+                  data-pt-br-dark="Modo Escuro"
+                  data-pt-br-light="Modo Claro"
+                  data-es-dark="Modo Oscuro"
+                  data-es-light="Modo Claro"
+                  data-de-dark="Dunkelmodus"
+                  data-de-light="Hellmodus"
+                  data-fr-dark="Mode Sombre"
+                  data-fr-light="Mode Clair"
+                  data-cs-dark="Tmavý Režim"
+                  data-cs-light="Světlý Režim"
+                  data-vi-dark="Chế độ Tối"
+                  data-vi-light="Chế độ Sáng"
+                  data-ar-dark="الوضع المظلم"
+                  data-ar-light="الوضع المضيء"
+                  data-zh-dark="深色模式"
+                  data-zh-light="浅色模式"
+                  data-ru-dark="Тёмный режим"
+                  data-ru-light="Светлый режим">Tryb Ciemny</span>
+            <span class="mode-icon sun">☀️</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <h2 data-pl="Rejestracja" 
+                data-en="Register" 
+                data-pt="Registar"
+                data-pt-br="Cadastro"
+                data-es="Registro"
+                data-de="Registrierung"
+                data-fr="Inscription"
+                data-cs="Registrace"
+                data-vi="Đăng ký"
+                data-ar="التسجيل" 
+                data-zh="注册" 
+                data-ru="Регистрация">Rejestracja</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <input type="text" id="username" required>
+                    <label for="username" 
+                           data-pl="Login" 
+                           data-en="Username" 
+                           data-pt="Nome de utilizador"
+                           data-pt-br="Nome de usuário"
+                           data-es="Nombre de usuario"
+                           data-de="Benutzername"
+                           data-fr="Nom d'utilisateur"
+                           data-cs="Uživatelské jméno"
+                           data-vi="Tên đăng nhập"
+                           data-ar="اسم المستخدم" 
+                           data-zh="用户名" 
+                           data-ru="Имя пользователя">Login</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label for="email" 
+                           data-pl="Email" 
+                           data-en="Email" 
+                           data-pt="Email"
+                           data-pt-br="Email"
+                           data-es="Correo electrónico"
+                           data-de="E-Mail"
+                           data-fr="E-mail"
+                           data-cs="E-mail"
+                           data-vi="Email"
+                           data-ar="البريد الإلكتروني" 
+                           data-zh="电子邮件" 
+                           data-ru="Эл. почта">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password" 
+                           data-pl="Hasło" 
+                           data-en="Password" 
+                           data-pt="Senha"
+                           data-pt-br="Senha"
+                           data-es="Contraseña"
+                           data-de="Passwort"
+                           data-fr="Mot de passe"
+                           data-cs="Heslo"
+                           data-vi="Mật khẩu"
+                           data-ar="كلمة المرور" 
+                           data-zh="密码" 
+                           data-ru="Пароль">Hasło</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirm-password" required>
+                    <label for="confirm-password" 
+                           data-pl="Potwierdź hasło" 
+                           data-en="Confirm password" 
+                           data-pt="Confirmar senha"
+                           data-pt-br="Confirmar senha"
+                           data-es="Confirmar contraseña"
+                           data-de="Passwort bestätigen"
+                           data-fr="Confirmer le mot de passe"
+                           data-cs="Potvrdit heslo"
+                           data-vi="Xác nhận mật khẩu"
+                           data-ar="تأكيد كلمة المرور" 
+                           data-zh="确认密码" 
+                           data-ru="Подтвердите пароль">Potwierdź hasło</label>
+                </div>
+                <button type="submit" 
+                        data-pl="Zarejestruj się" 
+                        data-en="Register" 
+                        data-pt="Registar"
+                        data-pt-br="Cadastrar"
+                        data-es="Registrarse"
+                        data-de="Registrieren"
+                        data-fr="S'inscrire"
+                        data-cs="Zaregistrovat se"
+                        data-vi="Đăng ký"
+                        data-ar="التسجيل" 
+                        data-zh="注册" 
+                        data-ru="Зарегистрироваться">Zarejestruj się</button>
+                <a href="index.html" class="register-button"
+                   data-pl="Wróć do logowania" 
+                   data-en="Back to login" 
+                   data-pt="Voltar para login"
+                   data-pt-br="Voltar para login"
+                   data-es="Volver al inicio de sesión"
+                   data-de="Zurück zur Anmeldung"
+                   data-fr="Retour à la connexion"
+                   data-cs="Zpět k přihlášení"
+                   data-vi="Quay lại đăng nhập"
+                   data-ar="العودة إلى تسجيل الدخول" 
+                   data-zh="返回登录" 
+                   data-ru="Вернуться к входу">Wróć do logowania</a>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

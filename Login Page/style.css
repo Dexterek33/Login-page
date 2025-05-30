@@ -1,0 +1,380 @@
+:root {
+    --background-gradient-light: linear-gradient(120deg, #2980b9, #8e44ad);
+    --background-gradient-dark: linear-gradient(120deg, #1a1a2e, #16213e);
+    --box-bg-light: rgba(255, 255, 255, 0.95);
+    --box-bg-dark: rgba(30, 32, 43, 0.95);
+    --text-color-light: #2c3e50;
+    --text-color-dark: #ffffff;
+    --input-bg-light: rgba(0, 0, 0, 0.05);
+    --input-bg-dark: rgba(255, 255, 255, 0.1);
+    --input-color-light: #666;
+    --input-color-dark: #ffffff;
+    --button-gradient-light: linear-gradient(to right, #2980b9, #8e44ad);
+    --button-gradient-dark: linear-gradient(to right, #3498db, #9b59b6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--background-gradient-light);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode {
+    background: var(--background-gradient-dark);
+}
+
+.top-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dark-mode-toggle {
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    white-space: nowrap;
+    min-width: 140px;
+}
+
+.dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.dark-mode-toggle .moon {
+    display: inline-block;
+}
+
+.dark-mode-toggle .sun {
+    display: none;
+}
+
+body.dark-mode .dark-mode-toggle .moon {
+    display: none;
+}
+
+body.dark-mode .dark-mode-toggle .sun {
+    display: inline-block;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: var(--box-bg-light);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .login-box {
+    background: var(--box-bg-dark);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color-light);
+    font-size: 28px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .login-box h2 {
+    color: var(--text-color-dark);
+}
+
+.login-box h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    background: var(--button-gradient-light);
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode .login-box h2::after {
+    background: var(--button-gradient-dark);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--input-bg-light);
+    color: var(--text-color-light);
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+body.dark-mode .input-group input {
+    background: var(--input-bg-dark);
+    color: var(--text-color-dark);
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: var(--input-color-light);
+    transition: 0.3s;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+body.dark-mode .input-group label {
+    color: var(--input-color-dark);
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -10px;
+    left: 8px;
+    font-size: 12px;
+    padding: 0 5px;
+    background: var(--box-bg-light);
+    border-radius: 4px;
+    color: #2980b9;
+}
+
+body.dark-mode .input-group input:focus ~ label,
+body.dark-mode .input-group input:valid ~ label {
+    background: var(--box-bg-dark);
+    color: #3498db;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    user-select: none;
+}
+
+.remember-me input {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: #2980b9;
+}
+
+body.dark-mode .remember-me input {
+    accent-color: #3498db;
+}
+
+.remember-me label {
+    color: var(--input-color-light);
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .remember-me label {
+    color: var(--input-color-dark);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: var(--button-gradient-light);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-mode button {
+    background: var(--button-gradient-dark);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.register-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    color: #2980b9;
+    border: 2px solid #2980b9;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+body.dark-mode .register-button {
+    color: #3498db;
+    border-color: #3498db;
+}
+
+.register-button:hover {
+    background: rgba(41, 128, 185, 0.1);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .register-button:hover {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.register-button:active {
+    transform: translateY(0);
+}
+
+/* Update form spacing for registration page */
+#registerForm .input-group {
+    margin-bottom: 20px;
+}
+
+#registerForm .input-group:last-of-type {
+    margin-bottom: 30px;
+}
+
+/* RTL support for register button */
+[lang="ar"] .register-button {
+    direction: rtl;
+}
+
+/* Add RTL support for Arabic */
+[lang="ar"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[lang="ar"] .lang-switch {
+    left: 20px;
+    right: auto;
+    background-position: left 8px center;
+    padding-right: 12px;
+    padding-left: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .top-controls {
+        position: static;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .lang-switch, .dark-mode-toggle {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .login-box {
+        margin: 20px;
+        padding: 30px;
+    }
+
+    [lang="ar"] .lang-switch {
+        left: auto;
+    }
+}
+
+.lang-switch {
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 30px;
+    outline: none;
+    width: auto;
+    min-width: 120px;
+    backdrop-filter: blur(5px);
+}
+
+.lang-switch option {
+    background: #2980b9;
+    color: white;
+    padding: 10px;
+}
+
+.lang-switch:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+}
+
+.lang-switch:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* RTL support for register button */
+[lang="ar"] .register-button {
+    direction: rtl;
+} 

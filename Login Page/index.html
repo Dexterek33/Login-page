@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel logowania</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-controls">
+        <select id="langSwitch" class="lang-switch">
+            <option value="pl">Polski</option>
+            <option value="en">English</option>
+            <option value="pt">Português (Portugal)</option>
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="cs">Čeština</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+        </select>
+        <button id="darkModeToggle" class="dark-mode-toggle" 
+                data-pl="Tryb ciemny" 
+                data-en="Dark mode" 
+                data-pt="Modo escuro"
+                data-pt-br="Modo escuro"
+                data-es="Modo oscuro"
+                data-de="Dunkelmodus"
+                data-fr="Mode sombre"
+                data-cs="Tmavý režim"
+                data-vi="Chế độ tối"
+                data-ar="الوضع المظلم"
+                data-zh="深色模式"
+                data-ru="Тёмный режим">
+            <span class="moon">🌙</span>
+            <span class="sun">☀️</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <h2 data-pl="Logowanie" 
+                data-en="Login" 
+                data-pt="Iniciar Sessão"
+                data-pt-br="Entrar"
+                data-es="Iniciar Sesión"
+                data-de="Anmelden"
+                data-fr="Connexion"
+                data-cs="Přihlášení"
+                data-vi="Đăng nhập"
+                data-ar="تسجيل الدخول" 
+                data-zh="登录" 
+                data-ru="Вход">Logowanie</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" required>
+                    <label for="username" 
+                           data-pl="Login" 
+                           data-en="Username" 
+                           data-pt="Nome de utilizador"
+                           data-pt-br="Nome de usuário"
+                           data-es="Nombre de usuario"
+                           data-de="Benutzername"
+                           data-fr="Nom d'utilisateur"
+                           data-cs="Uživatelské jméno"
+                           data-vi="Tên đăng nhập"
+                           data-ar="اسم المستخدم" 
+                           data-zh="用户名" 
+                           data-ru="Имя пользователя">Login</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password" 
+                           data-pl="Hasło" 
+                           data-en="Password" 
+                           data-pt="Senha"
+                           data-pt-br="Senha"
+                           data-es="Contraseña"
+                           data-de="Passwort"
+                           data-fr="Mot de passe"
+                           data-cs="Heslo"
+                           data-vi="Mật khẩu"
+                           data-ar="كلمة المرور" 
+                           data-zh="密码" 
+                           data-ru="Пароль">Hasło</label>
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember" 
+                           data-pl="Zapamiętaj mnie" 
+                           data-en="Remember me" 
+                           data-pt="Lembrar-me"
+                           data-pt-br="Lembrar de mim"
+                           data-es="Recordarme"
+                           data-de="Angemeldet bleiben"
+                           data-fr="Se souvenir de moi"
+                           data-cs="Zapamatovat si mě"
+                           data-vi="Ghi nhớ đăng nhập"
+                           data-ar="تذكرني" 
+                           data-zh="记住我" 
+                           data-ru="Запомнить меня">Zapamiętaj mnie</label>
+                </div>
+                <button type="submit" 
+                        data-pl="Zaloguj się" 
+                        data-en="Sign in" 
+                        data-pt="Entrar"
+                        data-pt-br="Entrar"
+                        data-es="Iniciar sesión"
+                        data-de="Anmelden"
+                        data-fr="Se connecter"
+                        data-cs="Přihlásit se"
+                        data-vi="Đăng nhập"
+                        data-ar="تسجيل الدخول" 
+                        data-zh="登录" 
+                        data-ru="Войти">Zaloguj się</button>
+                <a href="register.html" class="register-button"
+                   data-pl="Zarejestruj się" 
+                   data-en="Register" 
+                   data-pt="Registar"
+                   data-pt-br="Cadastrar"
+                   data-es="Registrarse"
+                   data-de="Registrieren"
+                   data-fr="S'inscrire"
+                   data-cs="Zaregistrovat se"
+                   data-vi="Đăng ký"
+                   data-ar="التسجيل" 
+                   data-zh="注册" 
+                   data-ru="Регистрация">Zarejestruj się</a>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
